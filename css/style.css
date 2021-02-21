@@ -533,12 +533,15 @@ textarea {
 }
 
 html {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
 *,
 *::before,
 *::after {
+  -webkit-box-sizing: border-box;
   box-sizing: inherit;
 }
 
@@ -548,12 +551,19 @@ body {
   font-size: 16px;
   line-height: 1.2;
   font-weight: normal;
-  color: #102746;
+  color: #008ad3;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .wrapper {
   max-width: 1060px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 /* Header styles start */
@@ -566,14 +576,50 @@ body {
   transition: 0.2s linear;
   z-index: 999;
 }
+
+.header__burger {
+  display: none;
+  width: 40px;
+  height: 28px;
+  position: relative;
+}
+
+.burger__line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #008ad3;
+  position: absolute;
+  left: 0;
+}
+
+.burger__line_first {
+  top: 0;
+}
+
+.burger__line_third {
+  bottom: 0;
+}
+
+.burger__line_second {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .header__wrapper {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
+
 .header__active {
   background-color: #f2f2f2;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .header__logo-pic {
@@ -589,6 +635,7 @@ body {
 }
 .header__item:last-child {
   margin-right: 0;
+  padding-right: 50px;
 }
 .header__link {
   font-size: 18px;
@@ -637,6 +684,7 @@ body {
   background-color: #008ad3;
   margin: 0 auto;
   position: relative;
+  padding: 0 15px;
 }
 
 .benefits__title {
@@ -711,6 +759,7 @@ body {
   margin: 0 auto;
   position: relative;
   color: #008ad3;
+  padding: 0 15px;
 }
 
 .tours__tour {
@@ -780,7 +829,7 @@ body {
   position: relative;
   color: #008ad3;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 0 50px;
   align-items: center;
   margin-bottom: 77px;
@@ -824,7 +873,7 @@ body {
   .face.face1
   .services__content
   .content__title {
-  margin: 100px 0 0;
+  margin: 125px 0 0;
   padding: 0;
   color: #008ad3;
   text-align: center;
@@ -841,6 +890,12 @@ body {
   box-sizing: border-box;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
   transform: translateY(-100px);
+}
+
+.services__card {
+  width: 320px;
+  position: relative;
+  cursor: pointer;
 }
 
 .services__container .services__card:hover .face.face2 {
@@ -885,15 +940,58 @@ body {
   font-weight: 300;
 }
 
-.services-pic {
-  max-width: 277.5px;
-}
-
 .services-img {
+  max-width: 100%;
   position: absolute;
   left: 0;
   top: 0;
 }
+
+.services__container__prices {
+  color: white;
+}
+
+.price__title {
+  font-weight: 700;
+  font-size: 30px;
+  font-style: italic ;
+  border-bottom: 3px solid white;
+}
+
+.price-desc {
+  padding-bottom: 30px;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.prices__title {
+  font-weight: 700;
+  font-size: 40px;
+  padding-bottom: 30px;
+  text-align: center;
+  
+}
+.price-desc-text {
+  font-size: 25px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.price-desc-city {
+  font-size: 25px;
+  font-style: italic;
+}
+
+.price {
+  border-bottom: 5px solid #008ad3;
+  color: #008ad3;
+  text-decoration: none;
+}
+
+
+
+
 
 /* Услуги styles end */
 
@@ -909,7 +1007,6 @@ body {
   align-items: center;
   align-content: center;
   position: relative;
-  width: 90vw;
   transition: all 200ms ease-in-out 50ms;
   opacity: 0;
 }
@@ -1063,7 +1160,8 @@ body {
   padding-bottom: 80px;
 }
 
-.reviews-wrapper{
+.reviews-wrapper {
+  padding: 0 15px;
   padding-bottom: 80px;
   max-width: 1260px;
   margin: 0 auto;
@@ -1077,7 +1175,6 @@ body {
   font-size: 20px;
   font-weight: 700;
 }
-
 
 .carousel-desc {
   font-size: 16px;
@@ -1223,3 +1320,365 @@ body {
   padding-bottom: 20px;
 }
 /* Footer styles end */
+
+/* Media start */
+
+@media screen and (max-width: 850px) {
+  .header__burger {
+    display: block;
+  }
+
+  .header__nav {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #f2f2f2;
+    z-index: 10;
+    padding: 75px;
+    transform: translateX(100%);
+  }
+
+  .header__nav_active {
+    transform: translateX(0);
+  }
+
+  .header__item {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+    height: 75px;
+  }
+
+  .header__item:last-child {
+    margin-bottom: 0;
+  }
+  .header__link {
+    font-size: 42px;
+    line-height: 48px;
+  }
+
+  .header__nav-close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 11;
+  }
+
+  .header__nav-close-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #008ad3;
+    position: absolute;
+    top: 50%;
+  }
+
+  .header__nav-close-line:first-child {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .header__nav-close-line:last-child {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  .tours__tour {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0 50px;
+    align-items: center;
+    margin-bottom: 77px;
+  }
+
+  .tours__title {
+    padding-bottom: 50px;
+  }
+
+  .benefits__title {
+    padding-bottom: 50px;
+  }
+
+  .benefits__card-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .second__section-pic {
+    max-width: 350px;
+    padding-bottom: 20px;
+  }
+
+  .second__section__title {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  .second__section__desc {
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+  .services__title {
+    padding-bottom: 50px;
+  }
+  .services__container {
+    margin-bottom: 120px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 30px;
+  }
+
+  .carousel-wrapper {
+    height: 500px;
+    position: relative;
+    width: 700px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+  }
+
+  .content__title {
+    font-size: 16px;
+  }
+
+  .intro__title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .services__container {
+    margin-bottom: 120px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 30px;
+    padding: 0 50px;
+    grid-gap: 0 20px;
+  }
+
+  .services__card {
+    width: 320px;
+    position: relative;
+    cursor: pointer;
+  }
+  .services__container
+    .services__card
+    .face.face1
+    .services__content
+    .content__title {
+    margin: 120px 0 0;
+    padding: 0;
+    color: #008ad3;
+    text-align: center;
+    font-size: 17px;
+  }
+
+  .carousel-wrapper {
+    height: 700px;
+    position: relative;
+    width: 550px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+  }
+
+  .benefits__cards {
+    padding: 0 15px;
+    grid-column-gap: 35px;
+  }
+  .intro {
+    height: 80vh;
+  }
+
+  .services__container {
+    padding: 0 15px;
+    grid-gap: 0 20px;
+  }
+
+  .default {
+    height: 15vh;
+    width: 10vw;
+  }
+
+  .expand {
+    height: 18vh;
+    width: 30vw;
+    padding: 20px;
+  }
+
+  .second__section__img_mob-first {
+    grid-row-start: -1;
+  }
+
+  .work-pic {
+    width: 30px;
+    height: 30px;
+  }
+
+  .work__desc {
+    font-size: 15px;
+    text-align: center;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .services__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .benefits__cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+  }
+
+  .benefits__card {
+    grid-column: span 1;
+    margin-bottom: 50px;
+  }
+
+  .work__desc {
+    font-size: 12px;
+    text-align: center;
+    font-weight: 300;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .second__section-pic {
+    max-width: 200px;
+    padding-bottom: 10px;
+  }
+  .intro__title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .benefits__title {
+    font-size: 25px;
+    line-height: 30px;
+    padding: 20px 50px 40px 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    color: white;
+    background-color: #008ad3;
+  }
+  .tours__title {
+    font-size: 25px;
+    line-height: 30px;
+    padding-bottom: 40px;
+  }
+  .second__section__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .second__section__desc {
+    margin-bottom: 20px;
+  }
+  .second__section__desc {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 30px;
+  }
+  .services__title {
+    font-size: 25px;
+    line-height: 30px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+  }
+  .work__title {
+    font-size: 25px;
+    line-height: 30px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+  }
+  .contacts__title {
+    font-size: 25px;
+    line-height: 30px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+  }
+  .reviews__title {
+    font-size: 25px;
+    line-height: 30px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+  }
+  .work__desc {
+    font-size: 9px;
+    text-align: center;
+    font-weight: 300;
+  }
+  .contact__cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .carousel-desc {
+    font-size: 12px;
+    font-style: italic;
+  }
+  .carousel-wrapper {
+    height: 550px;
+    position: relative;
+    width: 330px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+  }
+  .carousel__title {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .carousel-item {
+    padding: 30px 12px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .carousel-wrapper {
+    height: 700px;
+    width: 300px;
+  }
+  .benefits__card-title {
+    font-size: 12px;
+  }
+
+  .carousel-item {
+    padding: 40px 12px;
+  }
+  .benefits__cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 18px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .benefits__cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 18px;
+  }
+  .services__card {
+    width: 250px;
+    position: relative;
+    cursor: pointer;
+  }
+  .work-pic {
+    width: 20px;
+    height: 20px;
+  }
+  .wrapper-full {
+    padding: 0 5px;
+  }
+  .work__desc {
+    font-size: 7px;
+  }
+  .carousel-wrapper {
+    width: 250px;
+  }
+  .intro__title {
+    font-size: 12px;
+    line-height: 15px;
+}
+}
+/* Media end */
