@@ -19,7 +19,7 @@
 
 ### Mobile version
 
-![Dream%20Cars%20e42ef45ff01b40a5a35977dd2df5a63f/IMG_8578.jpg](Dream%20Cars%20e42ef45ff01b40a5a35977dd2df5a63f/IMG_8578.jpg =100x200)
+![Dream%20Cars%20e42ef45ff01b40a5a35977dd2df5a63f/IMG_8578.jpg](Dream%20Cars%20e42ef45ff01b40a5a35977dd2df5a63f/IMG_8578.jpg | width=100)
 
 ![Dream%20Cars%20e42ef45ff01b40a5a35977dd2df5a63f/IMG_8579.jpg](Dream%20Cars%20e42ef45ff01b40a5a35977dd2df5a63f/IMG_8579.jpg =100x200)
 
